@@ -20,6 +20,7 @@ end
 class UserEntity < GeneralEntity 
     def initialize (entityName, entityDesc, userId)
         super(entityName,entityDesc)
+        # super - pass all args to superclass method with same name
         @id = userId.to_f
     end
     def get_userid
