@@ -1,7 +1,9 @@
 class GeneralEntity
+    @@entity_count = 0
     def initialize (entityName, entityDesc)
         @name = entityName
         @desc = entityDesc
+        @@entity_count += 1
     end
     def get_name
         return @name
@@ -14,6 +16,9 @@ class GeneralEntity
     end
     def set_desc (newDesc)
         @desc = newDesc
+    end
+    def show_classvars
+        return @@entity_count
     end
 end
 
@@ -55,3 +60,9 @@ puts("Role :: #{user1.role}")
 
 user1.dob = "12/05/2000"
 puts("DOB :: #{user1.dob}")
+
+user2 = UserEntity.new("morty", "aw jeez", 2)
+
+puts user1.inspect
+
+puts("Total entity count :: #{user1.show_classvars}")
