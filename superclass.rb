@@ -18,6 +18,11 @@ class GeneralEntity
 end
 
 class UserEntity < GeneralEntity 
+    
+    attr_accessor(:role, :dob)
+    # attr_reader
+    # attr_writer
+
     def initialize (entityName, entityDesc, userId)
         super(entityName,entityDesc)
         # super - pass all args to superclass method with same name
@@ -44,3 +49,9 @@ puts("Name :: #{user1.get_name} Desc :: #{user1.get_desc} Id :: #{user1.get_user
 puts("UserAge before :: #{user1.age}")
 user1.age = 5
 puts("UserAge after :: #{user1.age}")
+
+user1.role = "SDE"
+puts("Role :: #{user1.role}")
+
+user1.dob = "12/05/2000"
+puts("DOB :: #{user1.dob}")
