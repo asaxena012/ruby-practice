@@ -29,7 +29,18 @@ class UserEntity < GeneralEntity
     def set_userid (newUserid)
         @id = newUserid
     end
+    # Instance var using accessor methods
+    def age
+        return @age
+    end
+    def age=(userAge)
+        @age = userAge.to_f
+    end
 end
 
 user1 = UserEntity.new("bubu","awesome","0001")
 puts("Name :: #{user1.get_name} Desc :: #{user1.get_desc} Id :: #{user1.get_userid}")
+
+puts("UserAge before :: #{user1.age}")
+user1.age = 5
+puts("UserAge after :: #{user1.age}")
